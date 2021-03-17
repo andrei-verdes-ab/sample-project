@@ -12,7 +12,7 @@ const connection = mysql.createPool({
     port: parseInt(process.env.DB_PORT || ''),
     connectionLimit: 10,
     ssl  : {
-        ca : fs.readFileSync(__dirname + '/mysql-ca.crt')
+        ca : fs.readFileSync(__dirname + '../../mysql-ca.crt')
     }
 });
 
