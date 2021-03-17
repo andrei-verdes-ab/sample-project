@@ -1,8 +1,11 @@
 import { RedisClient} from 'redis';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const redisClient = new RedisClient({
-    port: 6379, // matches with first port # after -p above
-    host: '127.0.0.1'
+    port: process.env.REDIS_PORT, // matches with first port # after -p above
+    host: process.env.REDIS_HOST
 });
 
 export {
