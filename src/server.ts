@@ -16,6 +16,9 @@ app.use('/', router);
 
 const studentsRouter = StudentsRouter(new StudentsService(new StudentsDA()));
 
+router.get('/', (req, res) => {
+    res.sendStatus(200);
+})
 router.use('/students', studentsRouter);
 
 app.listen(process.env.APP_PORT, () => {
